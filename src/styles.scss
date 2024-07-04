@@ -2,8 +2,7 @@
 @import 'theme/colors';
 @import "theme/mixins";
 @import 'theme/theme';
-
-//Tailwind impoorts
+@import 'assets/fonts';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
