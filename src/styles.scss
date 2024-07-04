@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'theme/reset-css';
+@import 'theme/colors';
+@import "theme/mixins";
+@import 'theme/theme';
+
+//Tailwind impoorts
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
