@@ -1,0 +1,23 @@
+@mixin column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin between() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin centralize() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin font($size, $weight, $line-height, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $color;
+}
