@@ -5033,6 +5033,11 @@ postcss@^8.0.0, postcss@^8.1.0, postcss@^8.2.14, postcss@^8.4.21, postcss@^8.4.2
     picocolors "^1.0.1"
     source-map-js "^1.2.0"
 
+prettier@^3.3.2:
+  version "3.3.2"
+  resolved "https://artifactory.bcr.wan:443/artifactory/api/npm/npm-virtual/prettier/-/prettier-3.3.2.tgz"
+  integrity sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==
+
 proc-log@^3.0.0:
   version "3.0.0"
   resolved "https://artifactory.bcr.wan:443/artifactory/api/npm/npm-virtual/proc-log/-/proc-log-3.0.0.tgz"
