@@ -13,7 +13,6 @@
       [id]="inputId"
       [placeholder]="inputPlaceholder"
       [type]="inputType"
-      (blur)="onBlur($event)"
     />
     @if (inputFormControl.invalid && inputFormControl.touched) {
       <span class="input-container__input__error-message">{{

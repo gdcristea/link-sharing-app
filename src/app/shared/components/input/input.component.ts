@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { TypeOfInput } from '../../types';
 import { NgOptimizedImage } from '@angular/common';
@@ -37,21 +37,6 @@ export class InputComponent {
    */
   @Input()
   inputType!: TypeOfInput;
-
-  /**
-   * Event emitted when the input loses focus.
-   */
-  @Output()
-  blurEvent: EventEmitter<FocusEvent> = new EventEmitter<FocusEvent>();
-
-  /**
-   * Emits an event when the input loses focus.
-   *
-   * @param event - The blur event object.
-   */
-  onBlur(event: FocusEvent): void {
-    this.blurEvent.emit(event);
-  }
 
   /**
    * Return the appropriate icon based on the input type
