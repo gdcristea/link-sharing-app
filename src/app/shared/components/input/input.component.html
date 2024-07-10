@@ -1,0 +1,24 @@
+<div class="input-container">
+  <label [for]="inputId" class="input-container__label">{{ inputLabel }}</label>
+  <div class="input-container__input">
+    <img
+      class="input-container__input__icon"
+      [ngSrc]="getIconSrc()"
+      width="16"
+      height="16"
+      alt="input icon"
+    />
+    <input
+      [formControl]="inputFormControl"
+      [id]="inputId"
+      [placeholder]="inputPlaceholder"
+      [type]="inputType"
+      (blur)="onBlur($event)"
+    />
+    @if (inputFormControl.invalid && inputFormControl.touched) {
+      <span class="input-container__input__error-message">{{
+        getError()
+      }}</span>
+    }
+  </div>
+</div>
