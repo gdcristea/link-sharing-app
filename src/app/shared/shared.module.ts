@@ -3,7 +3,6 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {InputComponent} from "./components/input/input.component";
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     NgOptimizedImage,
