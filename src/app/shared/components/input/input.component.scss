@@ -4,6 +4,10 @@
   &__label {
     @include font(0.75rem, 400, 1.5, var(--dark-color));
     margin-bottom: 0.25rem;
+
+    &__error {
+      color: var(--danger-color);
+    }
   }
 
   &__input {
@@ -34,6 +38,11 @@
       &:focus {
         border-color: var(--primary-color);
         box-shadow: 0 0 2rem rgba(99, 60, 255, 0.25);
+      }
+
+      &.ng-invalid.ng-touched {
+        border-color: var(--danger-color);
+        box-shadow: none;
       }
     }
 

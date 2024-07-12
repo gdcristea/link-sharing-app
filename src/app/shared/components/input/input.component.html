@@ -1,5 +1,10 @@
 <div class="input-container">
-  <label [for]="inputId" class="input-container__label">{{ inputLabel }}</label>
+  <label
+    [for]="inputId"
+    class="input-container__label"
+    [ngClass]="{'input-container__label__error': inputFormControl.invalid && inputFormControl.touched}">
+    {{ inputLabel }}
+  </label>
   <div class="input-container__input">
     <img
       class="input-container__input__icon"
@@ -13,10 +18,12 @@
       [id]="inputId"
       [placeholder]="inputPlaceholder"
       [type]="inputType"
+      autocomplete="off"
+      (blur)="onBlur()"
     />
     @if (inputFormControl.invalid && inputFormControl.touched) {
       <span class="input-container__input__error-message">{{
-        getError()
+        errorMessage
       }}</span>
     }
   </div>

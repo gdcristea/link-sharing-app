@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 import { TypeOfInput } from '../../types';
-import { NgOptimizedImage } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [ReactiveFormsModule, NgOptimizedImage],
+  imports: [ReactiveFormsModule, NgOptimizedImage, CommonModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
@@ -24,7 +24,7 @@ export class InputComponent {
   /**
    * ID attribute for the input. Useful for associating with a <label> element.
    */
-  @Input() inputId!: string;
+  @Input() inputId?: string;
 
   /**
    * Label text displayed above the input.
@@ -39,6 +39,11 @@ export class InputComponent {
   inputType!: TypeOfInput;
 
   /**
+   * Error message shown to the right of the input
+   */
+  @Input() errorMessage?: string | null;
+
+  /**
    * Return the appropriate icon based on the input type
    */
   getIconSrc(): string {
@@ -48,20 +53,13 @@ export class InputComponent {
       case 'password':
         return 'assets/images/icon-password.svg';
     }
-  }
+  };
 
-  //TODO: Add min length for password
   /**
-   * Return the error message base on the validation error type
+   * Mark input as touched on blur event
    */
-  getError(): string | null {
-    if (this.inputFormControl.errors) {
-      if (this.inputFormControl.errors['required']) {
-        return 'Can’t be empty';
-      } else if (this.inputFormControl.errors['email']) {
-        return 'Make sure the email is valid';
-      }
-    }
-    return null;
+  onBlur(): void {
+    this.inputFormControl.markAsTouched();
+    this.inputFormControl.updateValueAndValidity();
   }
 }
